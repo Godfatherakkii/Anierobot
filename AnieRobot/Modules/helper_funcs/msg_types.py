@@ -10,7 +10,7 @@ from enum import IntEnum, unique
 
 from telegram import Message
 
-from marvel.modules.helper_funcs.string_handling import button_markdown_parser
+from AnieRobot.modules.helper_funcs.string_handling import button_markdown_parser
 
 
 @unique
