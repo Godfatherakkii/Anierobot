@@ -10,9 +10,9 @@ from typing import Optional
 
 from telegram import User, Chat, ChatMember, Update, Bot
 
-from marvel import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
-import marvel.modules.sql.admin_sql as admin_sql
-from marvel.modules.translations.strings import tld
+from AnieRobot import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
+import AnieRobot.modules.sql.admin_sql as admin_sql
+from AnieRobot.modules.translations.strings import tld
 
 
 def can_delete(chat: Chat, bot_id: int) -> bool:
