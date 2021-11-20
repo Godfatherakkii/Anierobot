@@ -1,4 +1,4 @@
-#Copyright (C) 2021 Free Software @noobanon @FakeMasked , Inc.[ https://t.me/noobanon https://t.me/FakeMasked ]
+#Copyright (C) 2021 Free Software @d3nvil @FakeMasked , Inc.[ https://t.me/D3NVIL https://t.me/FakeMasked ]
 #Everyone is permitted to copy and distribute verbatim copies
 #of this license document, but changing it is not allowed.
 #The GNGeneral Public License is a free, copyleft license for
@@ -13,7 +13,7 @@ from datetime import datetime
 
 import telegram.ext as tg
 
-print("marvel")
+print("AnieRobot")
 print("Starting...")
 
 
@@ -72,7 +72,7 @@ if ENV:
     API_WEATHER = os.environ.get('API_OPENWEATHER', None)
 
 else:
-    from marvel.config import Development as Config
+    from AnieRobot.config import Development as Config
     TOKEN = Config.TOKEN
     try:
         OWNER_ID = int(Config.OWNER_ID)
