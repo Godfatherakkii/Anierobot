@@ -3,8 +3,8 @@ from typing import Union
 
 from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, func, distinct
 
-from marvel.modules.helper_funcs.msg_types import Types
-from marvel.modules.sql import SESSION, BASE
+from AnieRobot.modules.helper_funcs.msg_types import Types
+from AnieRobot.modules.sql import SESSION, BASE
 
 
 class ChatAccessConnectionSettings(BASE):
