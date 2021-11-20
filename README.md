@@ -1,4 +1,4 @@
-![Marvel](https://i.imgur.com/mXpnO7n.jpg)
+![Marvel](https://telegra.ph/file/7944090b9aca51ef8f562.jpg)
 # Marvel
 
 <p align="center";
