@@ -1,6 +1,6 @@
 
 {
-  "name": "Marvel",
+  "name": "AnieRobot",
   "description": "Telegram's sassiest group manager. Modular Telegram group management bot!",
   "keywords": [
     "telegram",
@@ -9,7 +9,7 @@
     "manager",
     "3"
   ],
-  "repository": "https://github.com/noobanon/missmarvel",
+  "repository": "https://github.com/Anieteam/AnieRobot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables",
