@@ -9,12 +9,12 @@
 
 <p align="center">
     <a href="https://app.codacy.com/manual/Anieteam/Aniebots/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/Anieteam/AnieRobot"> <img src="https://img.shields.io/github/languages/code-size/noobanon/missmarvel?color=purple&style=for-the-badge" /></a>
-    <a href="https://github.com/noobanon/missmarvel/commits/noobanon"> <img src="https://img.shields.io/github/last-commit/noobanon/missmarvel?color=red&style=for-the-badge" /></a>
-    <a href="https://github.com/noonanon/missmarvel/issues"> <img src="https://img.shields.io/github/issues/noobanon/missmarvel?color=yellow&style=for-the-badge" /></a>
-    <a href="https://github.com/noobanon/missmarvel/network/members"> <img src="https://img.shields.io/github/forks/noobanon/missmarvel?color=green&style=for-the-badge" /></a>  
+    <a href="https://github.com/Anieteam/AnieRobot"> <img src="https://img.shields.io/github/languages/code-size/Anieteam/AnieRobot?color=purple&style=for-the-badge" /></a>
+    <a href="https://github.com/Anieteam/AnieRobot/commits/Anieteam"> <img src="https://img.shields.io/github/last-commit/Anieteam/AnieRobot?color=red&style=for-the-badge" /></a>
+    <a href="https://github.com/Anieteam/AnieRobot/issues"> <img src="https://img.shields.io/github/issues/Anieteam/AnieRobot?color=yellow&style=for-the-badge" /></a>
+    <a href="https://github.com/Anieteam/AnieRobot/network/members"> <img src="https://img.shields.io/github/forks/Anieteam/AnieRobot?color=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/python-telegram-bot/"> <img src="https://img.shields.io/pypi/v/python-telegram-bot?color=yellow&label=python-telegram-bot&logo=python&logoColor=green&style=for-the-badge" /></a>
-     <a href="https://github.com/noobanon/missmarvel/graphs/contributors?from=2021-05-23&to=2021-06-04&type=c"> <img src="https://img.shields.io/github/contributors/noobanon/missmarvel?style=for-the-badge" /></a>        
+     <a href="https://github.com/Anieteam/AnieRobot/graphs/contributors?from=2021-05-23&to=2021-06-04&type=c"> <img src="https://img.shields.io/github/contributors/Anieteam/AnieRobot?style=for-the-badge" /></a>        
 </p>
 
 <h2 align="center";>Marvel-English</h2>
