@@ -1,4 +1,4 @@
-#Copyright (C) 2021 Free Software @noobanon @FakeMasked , Inc.[ https://t.me/noobanon https://t.me/FakeMasked ]
+#Copyright (C) 2021 Free Software @d3nvil @FakeMasked , Inc.[ https://t.me/d3nvil https://t.me/FakeMasked ]
 #Everyone is permitted to copy and distribute verbatim copies
 #of this license document, but changing it is not allowed.
 #The GNGeneral Public License is a free, copyleft license for
@@ -12,7 +12,7 @@ class Config(object):
     # REQUIRED
     API_KEY = ""
     OWNER_ID = "1091139479"  # If you dont know, run the bot and do /id in your private chat with it
-    OWNER_USERNAME = "noobanon"
+    OWNER_USERNAME = "d3nvil"
     TOKEN = '1306525471:AAEu2agIza0S8FNr9cLjvslhB9oLkhcjVlE'
 
     # RECOMMENDED
