@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from marvel.modules.helper_funcs.msg_types import Types
-from marvel.modules.sql import BASE, SESSION
+from AnieRobot.modules.helper_funcs.msg_types import Types
+from AnieRobot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
