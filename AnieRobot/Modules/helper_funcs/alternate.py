@@ -1,4 +1,4 @@
-#Copyright (C) 2021 Free Software @noobanon @FakeMasked , Inc.[ https://t.me/noobanon https://t.me/FakeMasked ]
+#Copyright (C) 2021 Free Software @d3nvil @FakeMasked , Inc.[ https://t.me/d3nvil https://t.me/FakeMasked ]
 #Everyone is permitted to copy and distribute verbatim copies
 #of this license document, but changing it is not allowed.
 #The GNGeneral Public License is a free, copyleft license for
@@ -14,9 +14,9 @@ from typing import Optional
 from telegram import User, Chat, ChatMember, Update, Bot
 from telegram import error
 
-from marvel import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
+from AnieRobot import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
 
-from marvel.modules import translations
+from AnieRobot.modules import translations
 
 
 def send_message(message, text,  *args,**kwargs):
