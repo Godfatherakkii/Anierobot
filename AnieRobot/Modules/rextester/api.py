@@ -1,6 +1,6 @@
 import requests
 
-from marvel.modules.rextester.langs import languages
+from AnieRobot.modules.rextester.langs import languages
 
 ### API warper for rextester.com
 ## Author: Nitan Alexandru Marcel.
