@@ -65,11 +65,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/marvel
-RUN git clone https://github.com/noobanon/MissMarvel /root/MissMarvel
-WORKDIR /root/marvel
+RUN git clone https://github.com/Anieteam/AnieRobot/root/AnieRobot 
+WORKDIR /root/AnieRobot 
 
-#Copy config file to /root/MissMarvel/marvel
-COPY ./marvel/sample_config.py ./marvel/config.py* /root/MissMarvel/Marvel/
+#Copy config file to /root/AnieRobot//AnieRobot 
+COPY ./AnieRobot/sample_config.py ./AnieRobot/config.py* /root/AnieRobot/AnieRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","marvel"]
+CMD ["python3","-m","AnieRobot"]
