@@ -5,7 +5,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Integer, func, distinct
 
-from marvel.modules.sql import BASE, SESSION
+from AnieRobot.modules.sql import BASE, SESSION
 
 
 class Approvals(BASE):
