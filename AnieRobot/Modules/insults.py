@@ -8,8 +8,8 @@
 import random
 from telegram.ext import run_async, Filters
 from telegram import Message, Chat, Update, Bot, MessageEntity
-from marvel import dispatcher
-from marvel.modules.disable import DisableAbleCommandHandler
+from AnieRobot import dispatcher
+from AnieRobot.modules.disable import DisableAbleCommandHandler
 
 SFW_STRINGS = (
     "Owww ... Such a stupid idiot.",
