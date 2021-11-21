@@ -16,20 +16,20 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 
 import marvel.modules.sql.notes_sql as sql
-from marvel import dispatcher, LOGGER, OWNER_ID, SUDO_USERS, MESSAGE_DUMP
-from marvel.__main__ import DATA_IMPORT
-from marvel.modules.helper_funcs.chat_status import user_admin
-from marvel.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from marvel.modules.helper_funcs.msg_types import get_note_type
-from marvel.modules.rules import get_rules
-import marvel.modules.sql.rules_sql as rulessql
-from marvel.modules.sql import warns_sql as warnssql
-import marvel.modules.sql.blacklist_sql as blacklistsql
-from marvel.modules.sql import disable_sql as disabledsql
-from marvel.modules.sql import cust_filters_sql as filtersql
-import marvel.modules.sql.welcome_sql as welcsql
-import marvel.modules.sql.locks_sql as locksql
-from marvel.modules.connection import connected
+from AnieRobot import dispatcher, LOGGER, OWNER_ID, SUDO_USERS, MESSAGE_DUMP
+from AnieRobot.__main__ import DATA_IMPORT
+from AnieRobot.modules.helper_funcs.chat_status import user_admin
+from AnieRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from AnieRobot.modules.helper_funcs.msg_types import get_note_type
+from AnieRobot.modules.rules import get_rules
+import AnieRobot.modules.sql.rules_sql as rulessql
+from AnieRobot.modules.sql import warns_sql as warnssql
+import AnieRobot.modules.sql.blacklist_sql as blacklistsql
+from AnieRobot.modules.sql import disable_sql as disabledsql
+from AnieRobot.modules.sql import cust_filters_sql as filtersql
+import AnieRobot.modules.sql.welcome_sql as welcsql
+import AnieRobot.modules.sql.locks_sql as locksql
+from AnieRobot.modules.connection import connected
 
 
 @user_admin
