@@ -16,14 +16,14 @@ from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackQueryH
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown
 
-import marvel.modules.sql.notes_sql as sql
-from marvel import dispatcher, MESSAGE_DUMP, LOGGER
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.chat_status import user_admin, user_can_change
-from marvel.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from marvel.modules.helper_funcs.msg_types import get_note_type
+import AnieRobot.modules.sql.notes_sql as sql
+from AnieRobot import dispatcher, MESSAGE_DUMP, LOGGER
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import user_admin, user_can_change
+from AnieRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from AnieRobot.modules.helper_funcs.msg_types import get_note_type
 
-from marvel.modules.connection import connected
+from AnieRobot.modules.connection import connected
 
 FILE_MATCHER = re.compile(r"^###file_id(!photo)?###:(.*?)(?:\s|$)")
 STICKER_MATCHER = re.compile(r"^###sticker(!photo)?###:")
