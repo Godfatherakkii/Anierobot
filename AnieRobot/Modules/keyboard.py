@@ -11,11 +11,11 @@ from typing import List, Dict
 from telegram import Bot, ParseMode, ReplyKeyboardMarkup, KeyboardButton
 from telegram.error import TelegramError
 
-from marvel import dispatcher
-from marvel.modules.translations.strings import tld
+from AnieRobot import dispatcher
+from AnieRobot.modules.translations.strings import tld
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 
-import marvel.modules.sql.connection_sql as con_sql
+import AnieRobot.modules.sql.connection_sql as con_sql
 
 
 def keyboard(update, context):
