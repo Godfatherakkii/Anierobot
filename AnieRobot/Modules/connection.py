@@ -13,15 +13,15 @@ from telegram.ext import CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html
 
-import marvel.modules.sql.connection_sql as sql
-from marvel import dispatcher, LOGGER, SUDO_USERS
-from marvel.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_admin, can_restrict
-from marvel.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from marvel.modules.helper_funcs.string_handling import extract_time
+import AnieRobot.modules.sql.connection_sql as sql
+from AnieRobot import dispatcher, LOGGER, SUDO_USERS
+from AnieRobot.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_admin, can_restrict
+from AnieRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from AnieRobot.modules.helper_funcs.string_handling import extract_time
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
-from marvel.modules.keyboard import keyboard
+from AnieRobot.modules.keyboard import keyboard
 
 @user_admin
 def allow_connections(update, context) -> str:
