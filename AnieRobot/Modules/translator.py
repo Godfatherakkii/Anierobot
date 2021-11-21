@@ -11,8 +11,8 @@ from telegram import Message, Update, Bot, User
 from telegram import MessageEntity
 from telegram.ext import Filters, MessageHandler, run_async
 
-from marvel import dispatcher, LOGGER
-from marvel.modules.disable import DisableAbleCommandHandler
+from AnieRobot import dispatcher, LOGGER
+from AnieRobot.modules.disable import DisableAbleCommandHandler
 
 from googletrans import Translator
 
