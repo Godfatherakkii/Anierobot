@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, Integer, UnicodeText, String, ForeignKey, UniqueConstraint, func
 
-from marvel import dispatcher
-from marvel.modules.sql import BASE, SESSION
+from AnieRobot import dispatcher
+from AnieRobot.modules.sql import BASE, SESSION
 
 
 class Users(BASE):
