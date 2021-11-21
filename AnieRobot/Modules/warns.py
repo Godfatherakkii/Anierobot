@@ -16,19 +16,19 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, DispatcherHandlerStop, MessageHandler, Filters, CallbackQueryHandler
 from telegram.utils.helpers import mention_html
 
-from marvel import dispatcher, BAN_STICKER
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.chat_status import is_user_admin, bot_admin, user_admin_no_reply, user_admin, \
+from AnieRobot import dispatcher, BAN_STICKER
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import is_user_admin, bot_admin, user_admin_no_reply, user_admin, \
     can_restrict, user_can_change, user_can_ban
-from marvel.modules.helper_funcs.extraction import extract_text, extract_user_and_text, extract_user
-from marvel.modules.helper_funcs.filters import CustomFilters
-from marvel.modules.helper_funcs.misc import split_message
-from marvel.modules.helper_funcs.string_handling import split_quotes
-from marvel.modules.log_channel import loggable
-from marvel.modules.rules import send_rules
-from marvel.modules.sql import warns_sql as sql
-import marvel.modules.sql.rules_sql as rules_sql
-from marvel.modules.sql.approve_sql import is_approved
+from AnieRobot.modules.helper_funcs.extraction import extract_text, extract_user_and_text, extract_user
+from AnieRobot.modules.helper_funcs.filters import CustomFilters
+from AnieRobot.modules.helper_funcs.misc import split_message
+from AnieRobot.modules.helper_funcs.string_handling import split_quotes
+from AnieRobot.modules.log_channel import loggable
+from AnieRobot.modules.rules import send_rules
+from AnieRobot.modules.sql import warns_sql as sql
+import AnieRobot.modules.sql.rules_sql as rules_sql
+from AnieRobot.modules.sql.approve_sql import is_approved
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
