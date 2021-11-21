@@ -14,9 +14,9 @@ from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async
 
-from marvel import dispatcher, updater
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.chat_status import is_user_in_chat
+from AnieRobot import dispatcher, updater
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import is_user_in_chat
 
 
 def neko(update, context):
