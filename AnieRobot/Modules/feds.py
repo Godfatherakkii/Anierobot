@@ -18,19 +18,19 @@ from telegram import ParseMode, Update, Bot, Chat, User, MessageEntity
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from marvel import dispatcher, OWNER_ID, SUDO_USERS, WHITELIST_USERS, MESSAGE_DUMP, LOGGER
-from marvel.modules.helper_funcs.handlers import CMD_STARTERS
-from marvel.modules.helper_funcs.misc import is_module_loaded, send_to_list
-from marvel.modules.helper_funcs.chat_status import is_user_admin
-from marvel.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from marvel.modules.helper_funcs.string_handling import markdown_parser
-from marvel.modules.disable import DisableAbleCommandHandler
+from AnieRobot import dispatcher, OWNER_ID, SUDO_USERS, WHITELIST_USERS, MESSAGE_DUMP, LOGGER
+from AnieRobot.modules.helper_funcs.handlers import CMD_STARTERS
+from AnieRobot.modules.helper_funcs.misc import is_module_loaded, send_to_list
+from AnieRobot.modules.helper_funcs.chat_status import is_user_admin
+from AnieRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from AnieRobot.modules.helper_funcs.string_handling import markdown_parser
+from AnieRobot.modules.disable import DisableAbleCommandHandler
 
-import marvel.modules.sql.feds_sql as sql
+import AnieRobot.modules.sql.feds_sql as sql
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
-from marvel.modules.connection import connected
+from AnieRobot.modules.connection import connected
 
 # Hello bot owner, I spended for feds many hours of my life, Please don't remove this if you still respect MrYacha and peaktogoo
 # Federation by MrYacha 2018-2019
