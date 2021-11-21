@@ -13,16 +13,16 @@ from telegram import Message, Chat, Update, Bot, ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 
-import marvel.modules.sql.blacklist_sql as sql
-from marvel import dispatcher, LOGGER
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.chat_status import user_admin, user_not_admin, user_can_change
-from marvel.modules.helper_funcs.extraction import extract_text
-from marvel.modules.helper_funcs.misc import split_message
+import AnieRobot.modules.sql.blacklist_sql as sql
+from AnieRobot import dispatcher, LOGGER
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin, user_can_change
+from AnieRobot.modules.helper_funcs.extraction import extract_text
+from AnieRobot.modules.helper_funcs.misc import split_message
 
-from marvel.modules.connection import connected
+from AnieRobot.modules.connection import connected
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
 BLACKLIST_GROUP = 11
 
