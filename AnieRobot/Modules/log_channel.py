@@ -8,9 +8,9 @@
 from functools import wraps
 from typing import Optional
 
-from marvel.modules.helper_funcs.misc import is_module_loaded
+from AnieRobot.modules.helper_funcs.misc import is_module_loaded
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
