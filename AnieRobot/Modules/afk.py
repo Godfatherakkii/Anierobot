@@ -10,12 +10,12 @@ from telegram import Message, Update, Bot, User
 from telegram import MessageEntity, ParseMode
 from telegram.ext import Filters, MessageHandler, run_async
 
-from marvel import dispatcher
-from marvel.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
-from marvel.modules.sql import afk_sql as sql
-from marvel.modules.users import get_user_id
+from AnieRobot import dispatcher
+from AnieRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from AnieRobot.modules.sql import afk_sql as sql
+from AnieRobot.modules.users import get_user_id
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
