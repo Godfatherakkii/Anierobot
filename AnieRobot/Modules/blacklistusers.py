@@ -8,9 +8,9 @@
 from telegram import Message, User, Bot, Update, ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 
-from marvel import dispatcher, OWNER_ID
+from AnieRobot import dispatcher, OWNER_ID
 
-import marvel.modules.sql.blacklistusers_sql as sql
+import AnieRobot.modules.sql.blacklistusers_sql as sql
 
 
 def bl_user(update, context):
