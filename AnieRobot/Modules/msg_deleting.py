@@ -14,11 +14,11 @@ from telegram.ext import CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html
 
-from marvel import dispatcher, LOGGER
-from marvel.modules.helper_funcs.chat_status import user_admin, can_delete, user_can_delete
-from marvel.modules.log_channel import loggable
+from AnieRobot import dispatcher, LOGGER
+from AnieRobot.modules.helper_funcs.chat_status import user_admin, can_delete, user_can_delete
+from AnieRobot.modules.log_channel import loggable
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
 
 @user_admin
