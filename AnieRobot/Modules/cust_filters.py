@@ -15,20 +15,20 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, DispatcherHandlerStop, run_async, CallbackQueryHandler, Filters
 from telegram.utils.helpers import escape_markdown, mention_markdown
 
-from marvel import dispatcher, LOGGER, OWNER_ID, SUDO_USERS
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.chat_status import user_admin
-from marvel.modules.helper_funcs.extraction import extract_text
-from marvel.modules.helper_funcs.filters import CustomFilters
-from marvel.modules.helper_funcs.misc import build_keyboard_parser
-from marvel.modules.helper_funcs.msg_types import get_filter_type
-from marvel.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser, escape_invalid_curly_brackets
-from marvel.modules.sql import cust_filters_sql as sql
+from AnieRobot import dispatcher, LOGGER, OWNER_ID, SUDO_USERS
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import user_admin
+from AnieRobot.modules.helper_funcs.extraction import extract_text
+from AnieRobot.modules.helper_funcs.filters import CustomFilters
+from AnieRobot.modules.helper_funcs.misc import build_keyboard_parser
+from AnieRobot.modules.helper_funcs.msg_types import get_filter_type
+from AnieRobot.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser, escape_invalid_curly_brackets
+from AnieRobot.modules.sql import cust_filters_sql as sql
 
-from marvel.modules.connection import connected
+from AnieRobot.modules.connection import connected
 
-from marvel.modules.translations.strings import tld
-from marvel.modules.helper_funcs.alternate import send_message
+from AnieRobot.modules.translations.strings import tld
+from AnieRobot.modules.helper_funcs.alternate import send_message
 
 HANDLER_GROUP = 10
 
