@@ -5,12 +5,12 @@
 #software and other kinds of works.
 #PTB13 Updated by @noobanon
 
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel import dispatcher, SUDO_USERS
-from marvel.modules.helper_funcs.extraction import extract_user
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot import dispatcher, SUDO_USERS
+from AnieRobot.modules.helper_funcs.extraction import extract_user
 from telegram.ext import run_async, CallbackQueryHandler
-import marvel.modules.sql.approve_sql as sql
-from marvel.modules.helper_funcs.chat_status import bot_admin, user_admin, user_can_promote
+import AnieRobot.modules.sql.approve_sql as sql
+from AnieRobot.modules.helper_funcs.chat_status import bot_admin, user_admin, user_can_promote
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram import Update, Bot, Message, Chat, User
 from typing import Optional, List
