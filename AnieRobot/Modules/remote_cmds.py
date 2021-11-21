@@ -13,12 +13,12 @@ from telegram.error import BadRequest
 from telegram.ext import run_async, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from marvel import dispatcher
-from marvel.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_ban_protected, can_restrict, \
+from AnieRobot import dispatcher
+from AnieRobot.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_ban_protected, can_restrict, \
     is_user_admin, is_user_in_chat, is_bot_admin
-from marvel.modules.helper_funcs.extraction import extract_user_and_text
-from marvel.modules.helper_funcs.string_handling import extract_time
-from marvel.modules.helper_funcs.filters import CustomFilters
+from AnieRobot.modules.helper_funcs.extraction import extract_user_and_text
+from AnieRobot.modules.helper_funcs.string_handling import extract_time
+from AnieRobot.modules.helper_funcs.filters import CustomFilters
 
 RBAN_ERRORS = {
     "User is an administrator of the chat",
