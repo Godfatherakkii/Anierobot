@@ -12,17 +12,17 @@ from telegram import Message, Chat, Update, Bot, User
 from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
-from  marvel.modules.helper_funcs.string_handling import extract_time
-from  marvel.modules.helper_funcs.extraction import extract_user_and_text 
+from  AnieRobot.modules.helper_funcs.string_handling import extract_time
+from  AnieRobot.modules.helper_funcs.extraction import extract_user_and_text 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, User, CallbackQuery
 
-from  marvel import dispatcher
-from  marvel.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict, user_can_change
-from  marvel.modules.log_channel import loggable
-from  marvel.modules.sql import antiflood_sql as sql
-from  marvel.modules.connection import connected
-from  marvel.modules.translations.strings import tld
-from  marvel.modules.sql.approve_sql import is_approved
+from  AnieRobot import dispatcher
+from  AnieRobot.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict, user_can_change
+from  AnieRobot.modules.log_channel import loggable
+from  AnieRobot.modules.sql import antiflood_sql as sql
+from  AnieRobot.modules.connection import connected
+from  AnieRobot.modules.translations.strings import tld
+from  AnieRobot.modules.sql.approve_sql import is_approved
 FLOOD_GROUP = 3
 
 
