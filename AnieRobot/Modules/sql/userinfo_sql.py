@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, Integer, UnicodeText
 
-from marvel.modules.sql import SESSION, BASE
+from AnieRobot.modules.sql import SESSION, BASE
 
 
 class UserInfo(BASE):
