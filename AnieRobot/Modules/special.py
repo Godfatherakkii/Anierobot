@@ -15,14 +15,14 @@ from telegram.error import BadRequest
 from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown
-from marvel.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
+from AnieRobot.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
 
 import random
 import telegram
-import marvel.modules.sql.users_sql as sql
-from marvel import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, LOGGER
-from marvel.modules.helper_funcs.filters import CustomFilters
-from marvel.modules.disable import DisableAbleCommandHandler
+import AnieRobot.modules.sql.users_sql as sql
+from AnieRobot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, LOGGER
+from AnieRobot.modules.helper_funcs.filters import CustomFilters
+from AnieRobot.modules.disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 MESSAGES = (
