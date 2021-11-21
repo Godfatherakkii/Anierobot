@@ -11,8 +11,8 @@ from telegram import Message, Update, Bot, User
 from telegram import MessageEntity
 from telegram.ext import Filters, MessageHandler, run_async
 
-from marvel import dispatcher
-from marvel.modules.disable import DisableAbleCommandHandler
+from AnieRobot import dispatcher
+from AnieRobot.modules.disable import DisableAbleCommandHandler
 
 ABUSE_STRINGS = (
     "Fuck off",
