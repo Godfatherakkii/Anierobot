@@ -13,10 +13,10 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown
 
-import marvel.modules.sql.rules_sql as sql
-from marvel import dispatcher
-from marvel.modules.helper_funcs.chat_status import user_admin, user_can_change
-from marvel.modules.helper_funcs.string_handling import markdown_parser
+import AnieRobot.modules.sql.rules_sql as sql
+from AnieRobot import dispatcher
+from AnieRobot.modules.helper_funcs.chat_status import user_admin, user_can_change
+from AnieRobot.modules.helper_funcs.string_handling import markdown_parser
 
 
 
