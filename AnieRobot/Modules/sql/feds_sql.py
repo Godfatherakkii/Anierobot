@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, func, distinct
 
-from marvel.modules.sql import SESSION, BASE
+from AnieRobot.modules.sql import SESSION, BASE
 
 
 class Federations(BASE):
