@@ -126,7 +126,7 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
-from marvel.modules.helper_funcs.handlers import CustomCommandHandler
+from AnieRobot.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD:
 	tg.CommandHandler = CustomCommandHandler
