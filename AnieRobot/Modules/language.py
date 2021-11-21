@@ -6,17 +6,17 @@
 #PTB13 Updated by @noobanon
 
 
-from marvel.modules.sql.translation import switch_to_locale, prev_locale
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.sql.translation import switch_to_locale, prev_locale
+from AnieRobot.modules.translations.strings import tld
 from telegram.ext import CommandHandler
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from marvel import dispatcher
-from marvel.modules.translations.list_locale import list_locales
-from marvel.modules.helper_funcs.chat_status import user_admin
+from AnieRobot import dispatcher
+from AnieRobot.modules.translations.list_locale import list_locales
+from AnieRobot.modules.helper_funcs.chat_status import user_admin
 from telegram.ext import CallbackQueryHandler
 import re
 
-from marvel.modules.connection import connected
+from AnieRobot.modules.connection import connected
 
 
 @user_admin
