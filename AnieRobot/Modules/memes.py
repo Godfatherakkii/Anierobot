@@ -26,8 +26,8 @@ from telegram import MessageEntity
 from telegram.ext import Filters, MessageHandler, run_async
 from deeppyer import deepfry
 
-from marvel import dispatcher
-from marvel.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from AnieRobot import dispatcher
+from AnieRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 
 WIDE_MAP = dict((i, i + 0xFEE0) for i in range(0x21, 0x7F))
 WIDE_MAP[0x20] = 0x3000
