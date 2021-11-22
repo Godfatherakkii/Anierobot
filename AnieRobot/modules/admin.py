@@ -46,7 +46,6 @@ from AnieRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_pin,
     can_promote,
-    connection_status,
     user_admin,
     user_can_changeinfo,
     user_can_pin,
