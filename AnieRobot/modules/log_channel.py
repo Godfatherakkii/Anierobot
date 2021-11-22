@@ -1,155 +1,221 @@
-﻿#Copyright (C) 2021 Free Software @noobanon @FakeMasked , Inc.[ https://t.me/noobanon https://t.me/FakeMasked ]
-#Everyone is permitted to copy and distribute verbatim copies
-#of this license document, but changing it is not allowed.
-#The GNGeneral Public License is a free, copyleft license for
-#software and other kinds of works.
-#PTB13 Updated by @noobanon
+"""
+MIT License
 
+Copyright (C) 2017-2019, Paul Larsen
+Copyright (C) 2021 Awesome-RJ
+Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+
+This file is part of @Cutiepii_Robot (Telegram Bot)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+from datetime import datetime
 from functools import wraps
-from typing import Optional
 
-from AnieRobot.modules.helper_funcs.misc import is_module_loaded
+from telegram.ext import CallbackContext
 
-from AnieRobot.modules.translations.strings import tld
+from Cutiepii_Robot.modules.helper_funcs.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
 if is_module_loaded(FILENAME):
-    from telegram import Bot, Update, ParseMode, Message, Chat
+    from telegram import ParseMode, Update
     from telegram.error import BadRequest, Unauthorized
-    from telegram.ext import CommandHandler, run_async
+    from telegram.ext import CommandHandler, JobQueue, run_async
     from telegram.utils.helpers import escape_markdown
 
-    from AnieRobot import dispatcher, LOGGER
-    from AnieRobot.modules.helper_funcs.chat_status import user_admin
-    from AnieRobot.modules.sql import log_channel_sql as sql
-
+    from Cutiepii_Robot import EVENT_LOGS, LOGGER, dispatcher
+    from Cutiepii_Robot.modules.helper_funcs.chat_status import user_admin
+    from Cutiepii_Robot.modules.sql import log_channel_sql as sql
 
     def loggable(func):
         @wraps(func)
-        def log_action(update, context, *args, **kwargs):
-            result = func(update, context, *args, **kwargs)
-            chat = update.effective_chat  # type: Optional[Chat]
-            message = update.effective_message  # type: Optional[Message]
+        def log_action(
+            update: Update,
+            context: CallbackContext,
+            job_queue: JobQueue = None,
+            *args,
+            **kwargs,
+        ):
+            if not job_queue:
+                result = func(update, context, *args, **kwargs)
+            else:
+                result = func(update, context, job_queue, *args, **kwargs)
+
+            chat = update.effective_chat
+            message = update.effective_message
+
             if result:
-                if chat.type == chat.SUPERGROUP and chat.username:
-                    result += "\n<b>Link:</b> " \
-                              "<a href=\"http://telegram.me/{}/{}\">click here</a>".format(chat.username,
-                                                                                           message.message_id)
+                datetime_fmt = "%H:%M - %d-%m-%Y"
+                result += f"\n<b>Event Stamp</b>: <code>{datetime.utcnow().strftime(datetime_fmt)}</code>"
+
+                if message.chat.type == chat.SUPERGROUP and message.chat.username:
+                    result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
                 log_chat = sql.get_chat_log_channel(chat.id)
                 if log_chat:
-                    send_log(context.bot, log_chat, chat.id, result)
-            elif result == "":
-                pass
-            else:
-                LOGGER.warning("%s was set as loggable, but had no return statement.", func)
+                    send_log(context, log_chat, chat.id, result)
 
             return result
 
         return log_action
 
+    def gloggable(func):
+        @wraps(func)
+        def glog_action(update: Update, context: CallbackContext, *args, **kwargs):
+            result = func(update, context, *args, **kwargs)
+            chat = update.effective_chat
+            message = update.effective_message
 
-    def send_log(bot: Bot, log_chat_id: str, orig_chat_id: str, result: str):
+            if result:
+                datetime_fmt = "%H:%M - %d-%m-%Y"
+                result += "\n<b>Event Stamp</b>: <code>{}</code>".format(
+                    datetime.utcnow().strftime(datetime_fmt),
+                )
+
+                if message.chat.type == chat.SUPERGROUP and message.chat.username:
+                    result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                log_chat = str(EVENT_LOGS)
+                if log_chat:
+                    send_log(context, log_chat, chat.id, result)
+
+            return result
+
+        return glog_action
+
+    def send_log(
+        context: CallbackContext, log_chat_id: str, orig_chat_id: str, result: str,
+    ):
+        bot = context.bot
         try:
-            bot.send_message(log_chat_id, result, parse_mode=ParseMode.HTML)
+            bot.send_message(
+                log_chat_id,
+                result,
+                parse_mode=ParseMode.HTML,
+                disable_web_page_preview=True,
+            )
         except BadRequest as excp:
             if excp.message == "Chat not found":
-                bot.send_message(orig_chat_id, "This log channel has been deleted - unsetting.")
+                bot.send_message(
+                    orig_chat_id, "This log channel has been deleted - unsetting.",
+                )
                 sql.stop_chat_logging(orig_chat_id)
             else:
                 LOGGER.warning(excp.message)
                 LOGGER.warning(result)
                 LOGGER.exception("Could not parse")
 
-                bot.send_message(log_chat_id, result + "\n\nFormatting has been disabled due to an unexpected error.")
-
+                bot.send_message(
+                    log_chat_id,
+                    result
+                    + "\n\nFormatting has been disabled due to an unexpected error.",
+                )
 
     
     @user_admin
-    def logging(update, context):
-        message = update.effective_message  # type: Optional[Message]
-        chat = update.effective_chat  # type: Optional[Chat]
+    def logging(update: Update, context: CallbackContext):
+        bot = context.bot
+        message = update.effective_message
+        chat = update.effective_chat
 
         log_channel = sql.get_chat_log_channel(chat.id)
         if log_channel:
             log_channel_info = bot.get_chat(log_channel)
             message.reply_text(
-                "This group has all it's logs sent to: {} (`{}`)".format(escape_markdown(log_channel_info.title),
-                                                                         log_channel),
-                parse_mode=ParseMode.MARKDOWN)
+                f"This group has all it's logs sent to:"
+                f" {escape_markdown(log_channel_info.title)} (`{log_channel}`)",
+                parse_mode=ParseMode.MARKDOWN,
+            )
 
         else:
             message.reply_text("No log channel has been set for this group!")
 
-
-   
+    
     @user_admin
-    def setlog(update, context):
-        message = update.effective_message  # type: Optional[Message]
-        chat = update.effective_chat  # type: Optional[Chat]
+    def setlog(update: Update, context: CallbackContext):
         bot = context.bot
+        message = update.effective_message
+        chat = update.effective_chat
         if chat.type == chat.CHANNEL:
-            message.reply_text(tld(chat.id, "Now, forward the /setlog to the group you want to tie this channel to!"))
+            message.reply_text(
+                "Now, forward the /setlog to the group you want to tie this channel to!",
+            )
 
         elif message.forward_from_chat:
             sql.set_chat_log_channel(chat.id, message.forward_from_chat.id)
             try:
                 message.delete()
             except BadRequest as excp:
-                if excp.message == "Message to delete not found":
-                    pass
-                else:
-                    LOGGER.exception("Error deleting message in log channel. Should work anyway though.")
+                if excp.message != "Message to delete not found":
+                    LOGGER.exception(
+                        "Error deleting message in log channel. Should work anyway though.",
+                    )
 
             try:
-                bot.send_message(message.forward_from_chat.id, tld(chat.id, 
-                                 "This channel has been set as the log channel for {}.").format(
-                                     chat.title or chat.first_name))
+                bot.send_message(
+                    message.forward_from_chat.id,
+                    f"This channel has been set as the log channel for {chat.title or chat.first_name}.",
+                )
             except Unauthorized as excp:
                 if excp.message == "Forbidden: bot is not a member of the channel chat":
-                    bot.send_message(chat.id, tld(chat.id, "Successfully set log channel!"))
+                    bot.send_message(chat.id, "Successfully set log channel!")
                 else:
                     LOGGER.exception("ERROR in setting the log channel.")
 
-            bot.send_message(chat.id, tld(chat.id, "Successfully set log channel!"))
+            bot.send_message(chat.id, "Successfully set log channel!")
 
         else:
-            message.reply_text(tld(chat.id, "*The steps to set a log channel are:*\n"
-                               " • add bot to the desired channel\n"
-                               " • send /setlog to the channel\n"
-                               " • forward the /setlog to the group\n"), ParseMode.MARKDOWN)
-
+            message.reply_text(
+                "The steps to set a log channel are:\n"
+                " - add bot to the desired channel\n"
+                " - send /setlog to the channel\n"
+                " - forward the /setlog to the group\n",
+            )
 
     
     @user_admin
-    def unsetlog(update, context):
-        message = update.effective_message  # type: Optional[Message]
-        chat = update.effective_chat  # type: Optional[Chat]
+    def unsetlog(update: Update, context: CallbackContext):
         bot = context.bot
+        message = update.effective_message
+        chat = update.effective_chat
 
         log_channel = sql.stop_chat_logging(chat.id)
         if log_channel:
-            bot.send_message(log_channel, tld(chat.id, "Channel has been unlinked from {}").format(chat.title))
-            message.reply_text(tld(chat.id, "Log channel has been un-set."))
+            bot.send_message(
+                log_channel, f"Channel has been unlinked from {chat.title}",
+            )
+            message.reply_text("Log channel has been un-set.")
 
         else:
-            message.reply_text(tld(chat.id, "No log channel has been set yet!"))
-
+            message.reply_text("No log channel has been set yet!")
 
     def __stats__():
-        return "{} log channels set.".format(sql.num_logchannels())
-
+        return f"• {sql.num_logchannels()} log channels set."
 
     def __migrate__(old_chat_id, new_chat_id):
         sql.migrate_chat(old_chat_id, new_chat_id)
 
-
-    def __chat_settings__(bot, update, chat, chatP, user):
-        log_channel = sql.get_chat_log_channel(chat.id)
+    def __chat_settings__(chat_id, user_id):
+        log_channel = sql.get_chat_log_channel(chat_id)
         if log_channel:
             log_channel_info = dispatcher.bot.get_chat(log_channel)
-            return "This group has all it's logs sent to: {} (`{}`)".format(escape_markdown(log_channel_info.title),
-                                                                            log_channel)
+            return f"This group has all it's logs sent to: {escape_markdown(log_channel_info.title)} (`{log_channel}`)"
         return "No log channel is set for this group!"
 
 
@@ -164,4 +230,7 @@ if is_module_loaded(FILENAME):
 else:
     # run anyway if module not loaded
     def loggable(func):
+        return func
+
+    def gloggable(func):
         return func
