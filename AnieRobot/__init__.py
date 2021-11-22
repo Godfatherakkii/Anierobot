@@ -71,6 +71,11 @@ if ENV:
     BAN_STICKER = os.environ.get('BAN_STICKER', 'CAADAgADEAgAAgi3GQL9YQyT_kBpQwI')
     CUSTOM_CMD = os.environ.get('CUSTOM_CMD', True)
     API_WEATHER = os.environ.get('API_OPENWEATHER', None)
+    ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
+
+    ANIE_PHOTO = os.environ.get('ANIE_PHOTO', True)
+    GROUP_START_IMG = os.environ.get('GROUP_START_IMG',None)
+    HELP_IMG = os.environ.get('HELP_IMG',None)
 
 else:
     from AnieRobot.config import Development as Config
@@ -113,6 +118,10 @@ else:
     BAN_STICKER = Config.BAN_STICKER
     CUSTOM_CMD = Config.CUSTOM_CMD
     API_WEATHER = Config.API_OPENWEATHER
+    ALLOW_EXCL = Config.ALLOW_EXCL
+    ANIE_PHOTO = Config.ANIE_PHOTO
+    GROUP_START_IMG = Config.GROUP_START_IMG
+    HELP_IMG = Config.HELP_IMG
 
 
 SUDO_USERS.add(OWNER_ID)
