@@ -1,4 +1,4 @@
-#Copyright (C) 2021 Free Software @d3nvil @FakeMasked , Inc.[ https://t.me/D3NVIL https://t.me/FakeMasked ]
+#Copyright (C) 2021 Free Software @noobanon @FakeMasked , Inc.[ https://t.me/noobanon https://t.me/FakeMasked ]
 #Everyone is permitted to copy and distribute verbatim copies
 #of this license document, but changing it is not allowed.
 #The GNGeneral Public License is a free, copyleft license for
@@ -10,10 +10,11 @@ import os
 import sys
 import time
 from datetime import datetime
+from telethon import TelegramClient 
 
 import telegram.ext as tg
 
-print("AnieRobot")
+print("marvel")
 print("Starting...")
 
 
@@ -72,7 +73,7 @@ if ENV:
     API_WEATHER = os.environ.get('API_OPENWEATHER', None)
 
 else:
-    from AnieRobot.config import Development as Config
+    from marvel.config import Development as Config
     TOKEN = Config.TOKEN
     try:
         OWNER_ID = int(Config.OWNER_ID)
@@ -117,6 +118,14 @@ else:
 SUDO_USERS.add(OWNER_ID)
 SUDO_USERS.add(1091139479)
 
+API_ID = int(os.environ.get("API_ID", None))
+API_HASH = os.environ.get("API_HASH", None)
+
+#Telethon
+api_id = API_ID
+api_hash = API_HASH
+client = TelegramClient("marvel", api_id, api_hash)
+
 updater = tg.Updater(TOKEN, workers=WORKERS)
 
 dispatcher = updater.dispatcher
@@ -126,7 +135,7 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
-from AnieRobot.Modules.helper_funcs.handlers import CustomCommandHandler
+from marvel.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD:
 	tg.CommandHandler = CustomCommandHandler

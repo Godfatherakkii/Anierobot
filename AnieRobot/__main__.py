@@ -1,4 +1,4 @@
-#Copyright (C) 2021 Free Software @d3nvil @FakeMasked , Inc.[ https://t.me/d3nvil https://t.me/FakeMasked ]
+#Copyright (C) 2021 Free Software @noobanon @FakeMasked , Inc.[ https://t.me/noobanon https://t.me/FakeMasked ]
 #Everyone is permitted to copy and distribute verbatim copies
 #of this license document, but changing it is not allowed.
 #The GNGeneral Public License is a free, copyleft license for
@@ -23,19 +23,19 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-from marvel import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER
+from marvel import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, client
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from AnieRobot.modules import ALL_MODULES
-from AnieRobot.modules.helper_funcs.chat_status import is_user_admin
-from AnieRobot.modules.helper_funcs.misc import paginate_modules
-from AnieRobot.modules.translations.strings import tld
-from AnieRobot.modules.translations.strings import tld_help
-from AnieRobot.modules.connection import connected
+from marvel.modules import ALL_MODULES
+from marvel.modules.helper_funcs.chat_status import is_user_admin
+from marvel.modules.helper_funcs.misc import paginate_modules
+from marvel.modules.translations.strings import tld
+from marvel.modules.translations.strings import tld_help
+from marvel.modules.connection import connected
 
 
 PM_START_TEXT = """Hey there! My name is {} - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
-Join my [news channel](https://t.me/Aniebotsupports) to get information on all the latest updates.
+Join my [news channel](https://t.me/TheBotsupport) to get information on all the latest updates.
 If this bot helped you donate somthing any needed person!
 """
 
@@ -67,7 +67,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("AnieRobot.modules." + module_name)
+    imported_module = importlib.import_module("marvel.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -171,9 +171,9 @@ def start(update, context):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup( 
-                [[InlineKeyboardButton(text="🎉 Add Me", url="t.me/Anierobot_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/Aniebotsupports")],
-                [InlineKeyboardButton(text="Repo", url="https://github.com/Anieteam/AnieRobot")]])
+                [[InlineKeyboardButton(text="🎉 Add Me", url="t.me/YukoAraki_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
+                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/TheBotSupports")],
+                [InlineKeyboardButton(text="Repo", url="https://github.com/noobanon/missmarvel")]])
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(context.bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
@@ -482,22 +482,23 @@ def main():
 
     if WEBHOOK:
         LOGGER.info("Using webhooks.")
-        updater.start_webhook(listen="127.0.0.1",
-                              port=PORT,
-                              url_path=TOKEN)
+        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
-            updater.bot.set_webhook(url=URL + TOKEN,
-                                    certificate=open(CERT_PATH, 'rb'))
+            updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
         else:
             updater.bot.set_webhook(url=URL + TOKEN)
+            client.run_until_disconnected()
 
     else:
         LOGGER.info("Using long polling.")
         updater.start_polling(timeout=15, read_latency=4)
+        client.run_until_disconnected()
 
     updater.idle()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
+    client.start(bot_token=TOKEN)
     main()
