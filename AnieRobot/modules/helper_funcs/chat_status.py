@@ -6,15 +6,17 @@
 #PTB13 Updated by @noobanon
 
 from functools import wraps
+from time import perf_counter
+from cachetools import TTLCache
 from typing import Optional
 
 from telegram import User, Chat, ChatMember, Update, Bot
 
-from marvel import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
-import marvel.modules.sql.admin_sql as admin_sql
-from marvel.modules.translations.strings import tld
+from AnieRobot import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
+import AnieRobot.modules.sql.admin_sql as admin_sql
+from AnieRobot.modules.translations.strings import tld
 
-from marvel.mwt import MWT
+from AnieRobot.mwt import MWT
 
 # stores admemes in memory for 10 min.	
 ADMIN_CACHE = TTLCache(maxsize=512, ttl=60 * 10, timer=perf_counter)	
@@ -22,6 +24,10 @@ THREAD_LOCK = RLock()
 
 def can_delete(chat: Chat, bot_id: int) -> bool:
     return chat.get_member(bot_id).can_delete_messages
+
+def user_can_changeinfo(chat: Chat, user: User, bot_id: int) -> bool: 
+    return chat.get_member(user.id).can_change_info
+
 
 
 def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
