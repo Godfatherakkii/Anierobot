@@ -19,6 +19,10 @@ def can_delete(chat: Chat, bot_id: int) -> bool:
     return chat.get_member(bot_id).can_delete_messages
 
 
+def user_can_changeinfo(chat: Chat, user: User, bot_id: int) -> bool: 
+    return chat.get_member(user.id).can_change_info
+
+
 def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if chat.type == 'private' \
             or user_id in SUDO_USERS \
