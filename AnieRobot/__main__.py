@@ -161,7 +161,7 @@ buttons = [
                    [
                        InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
                        InlineKeyboardButton(text="❔ Chit Chat", url="https://t.me/Aniebotsupports"),
-                       InlineKeyboardButton(text="[► Source ◄]", url="https://github.com/Anieteam/AnieRobot""),
+                       InlineKeyboardButton(text="[► Source ◄]", url="https://github.com/Anieteam/AnieRobot"),
                      ],
                     [                  
                        InlineKeyboardButton(
