@@ -74,6 +74,7 @@ if ENV:
     CUSTOM_CMD = os.environ.get('CUSTOM_CMD', True)
     API_WEATHER = os.environ.get('API_OPENWEATHER', None)
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
+    SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT',None)
 
     ANIE_PHOTO = os.environ.get('ANIE_PHOTO', True)
     GROUP_START_IMG = os.environ.get('GROUP_START_IMG',None)
@@ -124,6 +125,7 @@ else:
     ANIE_PHOTO = Config.ANIE_PHOTO
     GROUP_START_IMG = Config.GROUP_START_IMG
     HELP_IMG = Config.HELP_IMG
+    SUPPORT_CHAT = Config.SUPPORT_CHAT
 
 
 SUDO_USERS.add(OWNER_ID)
