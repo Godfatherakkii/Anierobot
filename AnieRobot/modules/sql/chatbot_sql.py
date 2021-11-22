@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 Awesome-RJ
-Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+Copyright (C) 2021 D3NVIL 
+Copyright (c) 2021, Anie, <https://github.com/Anieteam/Aniebotsupports>
 
-This file is part of @Cutiepii_Robot (Telegram Bot)
+This file is part of @Anierobot_bot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ SOFTWARE.
 import threading
 
 from sqlalchemy import Column, String
-from Cutiepii_Robot.modules.sql import BASE, SESSION
+from AnieRobot.modules.sql import BASE, SESSION
 
 class KukiChats(BASE):
     __tablename__ = "kuki_chats"
