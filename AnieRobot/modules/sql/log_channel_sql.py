@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, func, distinct
 
-from marvel.modules.sql import BASE, SESSION
+from AnieRobot.modules.sql import BASE, SESSION
 
 
 class GroupLogs(BASE):
