@@ -18,7 +18,7 @@ from telegram.utils.helpers import mention_html
 import AnieRobot.modules.sql.antispam_sql as sql
 from AnieRobot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, STRICT_ANTISPAM
 from AnieRobot.modules.helper_funcs.chat_status import user_admin, is_user_admin
-from marvel.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from AnieRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
 from AnieRobot.modules.helper_funcs.filters import CustomFilters
 from AnieRobot.modules.helper_funcs.misc import send_to_list
 from AnieRobot.modules.sql.users_sql import get_all_chats
