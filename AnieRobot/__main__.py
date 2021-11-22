@@ -35,7 +35,7 @@ from AnieRobot.modules.connection import connected
 
 
 PM_START_TEXT = """Hey there! My name is {} - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
-Join my [news channel](https://t.me/TheBotsupport) to get information on all the latest updates.
+Join my [news channel](https://t.me/Aniebots) to get information on all the latest updates.
 If this bot helped you donate somthing any needed person!
 """
 
@@ -47,7 +47,7 @@ Helpful commands:
 - /help: If you are here you already used this!
 - /donate: Gives you info on how to support me and my creator.
 
-If you have any bugs or questions on how to use me, have a look at my group head to @TheBotSupports.
+If you have any bugs or questions on how to use me, have a look at my group head to @Aniebots.
  
 All commands can either be used with / or !.
 
@@ -126,7 +126,7 @@ RANDOM_START = (
     "Why you awaked meh?",
     "Hello there how can i help you?",
     "Arey you human?",
-    "Hey I'm Coded by @noobanon",
+    "Hey I'm Coded by @d3nvil",
     "Are you alive ? Umm I think yes",
     "Are you stalking meh ?",
 	"Relax I'm here",
