@@ -73,7 +73,7 @@ if ENV:
     API_WEATHER = os.environ.get('API_OPENWEATHER', None)
 
 else:
-    from marvel.config import Development as Config
+    from AnieRobot.config import Development as Config
     TOKEN = Config.TOKEN
     try:
         OWNER_ID = int(Config.OWNER_ID)
@@ -124,7 +124,7 @@ API_HASH = os.environ.get("API_HASH", None)
 #Telethon
 api_id = API_ID
 api_hash = API_HASH
-client = TelegramClient("Aniebot", api_id, api_hash)
+telethn = TelegramClient("Aniebot", api_id, api_hash)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 
