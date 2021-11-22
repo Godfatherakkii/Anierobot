@@ -808,7 +808,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(anie_about_callback, pattern=r"anie_")
+    about_callback_handler = CallbackQueryHandler(innexia_about_callback, pattern=r"anie_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
