@@ -8,6 +8,7 @@
 from functools import wraps
 from time import perf_counter
 from cachetools import TTLCache
+from threading import RLock
 from typing import Optional
 
 from telegram import User, Chat, ChatMember, Update, Bot
