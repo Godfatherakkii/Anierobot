@@ -26,17 +26,17 @@ from telegram import ParseMode, ReplyKeyboardRemove, ReplyKeyboardMarkup, Inline
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from marvel import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
-from marvel.__main__ import STATS, USER_INFO
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.extraction import extract_user
-from marvel.modules.helper_funcs.filters import CustomFilters
-from marvel.modules.rextester.api import Rextester, CompilerError
-from marvel.modules.rextester.langs import languages
+from AnieRobot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
+from AnieRobot.__main__ import STATS, USER_INFO
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.extraction import extract_user
+from AnieRobot.modules.helper_funcs.filters import CustomFilters
+from AnieRobot.modules.rextester.api import Rextester, CompilerError
+from AnieRobot.modules.rextester.langs import languages
 
-from marvel.modules.sql.translation import prev_locale
+from AnieRobot.modules.sql.translation import prev_locale
 
-from marvel.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld
 
 from requests import get
 
