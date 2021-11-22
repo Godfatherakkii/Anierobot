@@ -5,7 +5,7 @@ Copyright (C) 2017-2019, Paul Larsen
 Copyright (C) 2021 D3NVIL 
 Copyright (c) 2021, DenvilArmy, <https://github.com/Anieteam/AnieRobot>
 
-This file is part of @AnieRobot (Telegram Bot)
+This file is part of @Anierobot_bot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
