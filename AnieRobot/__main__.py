@@ -90,7 +90,7 @@ buttons = [
     [
         InlineKeyboardButton(text="📜 Aʙᴏᴜᴛ", callback_data="anie_"),
         InlineKeyboardButton(
-            text="Bᴀꜱɪᴄ Hᴇʟᴘ 👮", callback_data="innexia_basichelp"
+            text="Bᴀꜱɪᴄ Hᴇʟᴘ 👮", callback_data="anie_basichelp"
         ),
     ],
     [
@@ -216,12 +216,12 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            INNEXIA_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            ANIE_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SiderzChat")]]
+                [[InlineKeyboardButton(text="Aniebotchat", url="t.me/Aniebotsupports")]]
             ),
         )
         
@@ -351,7 +351,7 @@ def help_button(update, context):
 @run_async
 def innexia_about_callback(update, context):
     query = update.callback_query
-    if query.data == "innexia_":
+    if query.data == "anie_":
         query.message.edit_text(
             text=""" Anie - A bot to manage your groups with additional features!
             \nHere's the basic help regarding use of Anie.
@@ -374,7 +374,7 @@ def innexia_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "innexia_back":
+    elif query.data == "anie_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -383,7 +383,7 @@ def innexia_about_callback(update, context):
                 disable_web_page_preview=False,
         )
 
-    elif query.data == "innexia_basichelp":
+    elif query.data == "anie_basichelp":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
