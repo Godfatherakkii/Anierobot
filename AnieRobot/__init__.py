@@ -14,7 +14,7 @@ from telethon import TelegramClient
 
 import telegram.ext as tg
 
-print("marvel")
+print("Aniebot")
 print("Starting...")
 
 
@@ -124,7 +124,7 @@ API_HASH = os.environ.get("API_HASH", None)
 #Telethon
 api_id = API_ID
 api_hash = API_HASH
-client = TelegramClient("marvel", api_id, api_hash)
+client = TelegramClient("Aniebot", api_id, api_hash)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 
@@ -135,7 +135,7 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
-from marvel.modules.helper_funcs.handlers import CustomCommandHandler
+from AnieRobot.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD:
 	tg.CommandHandler = CustomCommandHandler
