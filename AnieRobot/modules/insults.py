@@ -84,12 +84,6 @@ def insult(update, context):
     else:
       message.reply_text(random.choice(SFW_STRINGS))
 
-__help__ = """
-- Reply to a text with /insult for insults.
-"""
-
-__mod_name__ = "Insults"
-
 INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
 
 dispatcher.add_handler(INSULT_HANDLER)
