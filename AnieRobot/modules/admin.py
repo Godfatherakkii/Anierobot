@@ -40,7 +40,7 @@ from telethon.errors import *
 from telethon.tl import *
 from telethon import *
 
-from AnieRobot import DRAGONS, dispatcher, telethn as bot
+from AnieRobot import SUDO_USERS, dispatcher, telethn as bot
 from AnieRobot.modules.disable import DisableAbleCommandHandler
 from AnieRobot.modules.helper_funcs.chat_status import (
     bot_admin,
