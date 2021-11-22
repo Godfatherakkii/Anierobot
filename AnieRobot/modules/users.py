@@ -19,7 +19,7 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
 
 import AnieRobot.modules.sql.users_sql as sql
-from marvel import dispatcher, OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS
+from AnieRobot import dispatcher, OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS
 from telegram.utils.helpers import escape_markdown
 from AnieRobot.modules.helper_funcs.filters import CustomFilters
 from AnieRobot.modules.helper_funcs.chat_status import is_user_ban_protected, bot_admin
