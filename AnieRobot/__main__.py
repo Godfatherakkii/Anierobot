@@ -512,18 +512,13 @@ def get_help(update, context):
 
 
 
-def send_settings(chat_id, user_id, user=False):
-    if user:
-        if USER_SETTINGS:
-            settings = "\n\n".join(
-                "*{}*:\n{}".format(mod.__mod_name__, mod.__user_settings__(user_id))
-                for mod in USER_SETTINGS.values()
-            )
-            dispatcher.bot.send_message(
-                user_id,
-                "These are your current settings:" + "\n\n" + settings,
-                parse_mode=ParseMode.MARKDOWN,
-            )
+def send_settings(chat_id, user_id, user=False): 
+    if user:  
+        if USER_SETTINGS: 
+            settings = "\n\n".join( 
+                "*{}*:\n{}".format(mod.__mod_name__, mod.__user_settings__(user_id)) for mod in USER_SETTINGS.values()) 
+            dispatcher.bot.send_message(user_id, tld(chat_id, "This is your current settings:") + "\n\n" + settings, parse_mode=ParseMode.MARKDOWN)
+
 
         else:
             dispatcher.bot.send_message(
