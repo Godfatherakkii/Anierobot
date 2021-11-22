@@ -1,4 +1,4 @@
-﻿from marvel import dispatcher
+﻿from AnieRobot import dispatcher
 
 RUN_STRINGS = (
     "Куда ты собрался?",
