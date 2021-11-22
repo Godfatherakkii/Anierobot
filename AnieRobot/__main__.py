@@ -23,7 +23,7 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-from AnieRobot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, client
+from AnieRobot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, telethn 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from AnieRobot.modules import ALL_MODULES
