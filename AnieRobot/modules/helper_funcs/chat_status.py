@@ -29,8 +29,8 @@ def can_delete(chat: Chat, bot_id: int) -> bool:
 def user_can_changeinfo(chat: Chat, user: User, bot_id: int) -> bool: 
     return chat.get_member(user.id).can_change_info
 
-def can_manage_voicechats(chat: Chat, user: User, bot_id: int) -> bool: 
-    return chat.get_member(user.id).can_manage_voice_chats
+def can_manage_voice_chats(chat: Chat, user: User, bot_id: int) -> bool: 
+    return chat.get_member(user.id).can_manage_voicechats
 
 
 def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
