@@ -61,6 +61,17 @@ from AnieRobot.modules.helper_funcs.extraction import (
 from AnieRobot.modules.log_channel import loggable
 from AnieRobot.modules.helper_funcs.alternate import send_message
 
+
+@user_admin
+def refresh_admin(update, _): 
+    try: 
+       ADMIN_CACHE.pop(update.effective_chat.id) 
+    except KeyError: 
+        pass 
+
+    update.effective_message.reply_text("Admins cache refreshed!")
+
+
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
         return isinstance(
