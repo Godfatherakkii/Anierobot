@@ -317,23 +317,6 @@ def shout(update, context):
     msg = "```\n" + result + "```"
     return update.effective_message.reply_text(msg, parse_mode="MARKDOWN")
 
-
-# no help string
-__help__ = """
-Some memes command, find it all out yourself!
-/owo: OWO de text
-/stretch: STRETCH de text
-/vapor: owo vapor dis
-/hitler: Quote a message and type this command to make a caption of hitler
-/mock: Does the same as /hitler but spongemock instead
-/kim: Does the same as /hitler but with Kim Jong Un instead (O no plox dont bomb my house)
-/pidor: 4pda memes
-/shout: Write anything that u want it to should
-/zalgofy: reply to a message to g̫̞l̼̦i̎͡tͫ͢c̘ͭh̛̗ it out!
-"""
-
-__mod_name__ = "Memes and etc."
-
 OWO_HANDLER = DisableAbleCommandHandler("owo", owo, admin_ok=True, run_async=True)
 STRETCH_HANDLER = DisableAbleCommandHandler("stretch", stretch, run_async=True)
 VAPOR_HANDLER = DisableAbleCommandHandler("vapor", vapor, pass_args=True, admin_ok=True, run_async=True)
