@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 D3NVIL 
-Copyright (c) 2021, DenvilArmy, <https://github.com/Anieteam/AnieRobot>
+Copyright (C) 2021 Awesome-RJ
+Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
 
-This file is part of @Anierobot_bot (Telegram Bot)
+This file is part of @Cutiepii_Robot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,37 +34,44 @@ import time
 import re
 import sys
 import traceback
-import AnieRobot.modules.sql.users_sql as sql
+import Cutiepii_Robot.modules.sql.users_sql as sql
 
 
 from sys import argv
 from typing import Optional
-from AnieRobot import (
+from Cutiepii_Robot import (
     ALLOW_EXCL,
     CERT_PATH,
+    DONATION_LINK,
     LOGGER,
     OWNER_ID,
     PORT,
     TOKEN,
     URL,
     WEBHOOK,
+    SUPPORT_CHAT,
+    BOT_USERNAME,
+    BOT_NAME,
+    EVENT_LOGS,
     HELP_IMG,
     GROUP_START_IMG,
-    ANIE_PHOTO,
+    CUTIEPII_PHOTO,
     dispatcher,
     StartTime,
     telethn,
     updater,
+    pgram,
+    ubot,
     )
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from AnieRobot.events import register
-from AnieRobot.modules import ALL_MODULES
-from AnieRobot.modules.helper_funcs.chat_status import is_user_admin
-from AnieRobot.modules.helper_funcs.alternate import typing_action
-from AnieRobot.modules.helper_funcs.misc import paginate_modules
-from AnieRobot.modules.disable import DisableAbleCommandHandler
+from Cutiepii_Robot.events import register
+from Cutiepii_Robot.modules import ALL_MODULES
+from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin
+from Cutiepii_Robot.modules.helper_funcs.alternate import typing_action
+from Cutiepii_Robot.modules.helper_funcs.misc import paginate_modules
+from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -84,27 +91,28 @@ from telegram.ext import (
 
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
+from pyrogram import Client, idle
 from telethon import Button, events
 
 @telethn.on(events.NewMessage(pattern="/alive"))
 async def awake(event):
-  ANIE = event.sender.first_name
-  ANIE = "**♡ I,m Anie Robot 愛** \n\n"
-  ANIE += "**♡ I'm Working With Awesome Speed**\n\n"
-  ANIE += "**♡ Cutiepii: LATEST Version**\n\n"
-  ANIE += "**♡ My Creator:** [Rajkumar](t.me/Awesome_RJ)\n\n"
-  ANIE += "**♡ python-Telegram-Bot: 13.7**\n\n"
-  ANIE_BUTTON = [
+  CUTIEPII = event.sender.first_name
+  CUTIEPII = "**♡ I,m Cutiepii Robot 愛** \n\n"
+  CUTIEPII += "**♡ I'm Working With Awesome Speed**\n\n"
+  CUTIEPII += "**♡ Cutiepii: LATEST Version**\n\n"
+  CUTIEPII += "**♡ My Creator:** [Rajkumar](t.me/Awesome_RJ)\n\n"
+  CUTIEPII += "**♡ python-Telegram-Bot: 13.7**\n\n"
+  CUTIEPII_BUTTON = [
       [
-          Button.url("🚑 Support", "https://t.me/Aniebotsupports"),
-          Button.url("📢 Updates", "https://t.me/Aniebots")
+          Button.url("🚑 Support", f"https://t.me/{SUPPORT_CHAT}"),
+          Button.url("📢 Updates", "https://t.me/Black_Knights_Union")
       ]
   ]
   await telethn.send_file(
       event.chat_id,
-      ANIE_PHOTO,
-      caption = ANIE,
-      buttons = ANIE_BUTTON,
+      CUTIEPII_PHOTO,
+      caption = CUTIEPII,
+      buttons = CUTIEPII_BUTTON,
   )
 
     
@@ -136,9 +144,9 @@ HELP_MSG = "Click the button below to get help manu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/7944090b9aca51ef8f562.jpg) 」────
+────「 [{}](https://telegra.ph/file/2909a312d9438798d237a.png) 」────
 *Hola! {},*
-*I am an  advance group management bot with a lot of Sexy Features.*
+*I am an Anime themed advance group management bot with a lot of Sexy Features.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
 • `{}` *users, across* `{}` *chats.*
@@ -154,21 +162,21 @@ Haven't slept since: {}
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"Add Anie To Your Group",
-                            url=f"t.me/Anierobot_bot?startgroup=true")
+                            text=f"Add {BOT_NAME} To Your Group",
+                            url=f"t.me/{BOT_USERNAME}?startgroup=true")
                     ],
                    [
                        InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-                       InlineKeyboardButton(text="❔ Chit Chat", url="https://t.me/Aniebotsupports"),
-                       InlineKeyboardButton(text="[► Source ◄]", url="https://github.com/Anieteam/AnieRobot"),
+                       InlineKeyboardButton(text="❔ Chit Chat", url="https://t.me/HindiKDrama"),
+                       InlineKeyboardButton(text="[► Inline ◄]", switch_inline_query_current_chat=""),
                      ],
                     [                  
                        InlineKeyboardButton(
                              text="🚑 Support",
-                             url=f"https://t.me/Aniebotsupports"),
+                             url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
                              text="📢 Updates",
-                             url="https://t.me/Aniebots")
+                             url="https://t.me/Black_Knights_Union")
                      ], 
     ]
 
@@ -197,7 +205,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("AnieRobot.modules." + module_name)
+    imported_module = importlib.import_module("Cutiepii_Robot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -307,11 +315,11 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="🚑 Support",
-                            url="https://telegram.dog/Aniebotsupports",
+                            url=f"https://telegram.dog/{SUPPORT_CHAT}",
                         ),
                         InlineKeyboardButton(
                             text="📢 Updates",
-                            url="https://telegram.dog/Aniebots",
+                            url="https://telegram.dog/Black_Knights_Union",
                         ),
                     ]
                 ]
@@ -512,11 +520,13 @@ def get_help(update, context):
 
 
 
-def send_settings(chat_id, user_id, user=False): 
-    if user:  
-        if USER_SETTINGS: 
-            settings = "\n\n".join( 
-                "*{}*:\n{}".format(mod.__mod_name__, mod.__user_settings__(user_id)) for mod in USER_SETTINGS.values()) 
+def send_settings(chat_id, user_id, user=False):
+    if user:
+        if USER_SETTINGS:
+            settings = "\n\n".join(
+                "*{}*:\n{}".format(mod.__mod_name__, mod.__user_settings__(user_id))
+                for mod in USER_SETTINGS.values()
+            )
             dispatcher.bot.send_message(
                 user_id,
                 "These are your current settings:" + "\n\n" + settings,
@@ -754,7 +764,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info(f"Anie started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
+        LOGGER.info(f"Cutiepii started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
 
     if len(argv) not in (1, 3, 4):
@@ -764,9 +774,15 @@ def main():
 
     updater.idle()
 
-
+try:
+    ubot.start()
+except BaseException:
+    print("Userbot Error! Have you added a STRING_SESSION in deploying??")
+    sys.exit(1)
 
 if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
+    pgram.start()
     main()
+    idle()
