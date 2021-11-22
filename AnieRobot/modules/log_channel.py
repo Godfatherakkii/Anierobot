@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 Awesome-RJ
-Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+Copyright (C) 2021 D3NVIL 
+Copyright (c) 2021, Anieteam, <https://github.com/Anieteam/AnieRobot>
 
-This file is part of @Cutiepii_Robot (Telegram Bot)
+This file is part of @Anierobot_bot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ from functools import wraps
 
 from telegram.ext import CallbackContext
 
-from Cutiepii_Robot.modules.helper_funcs.misc import is_module_loaded
+from AnieRobot.modules.helper_funcs.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
@@ -41,9 +41,9 @@ if is_module_loaded(FILENAME):
     from telegram.ext import CommandHandler, JobQueue, run_async
     from telegram.utils.helpers import escape_markdown
 
-    from Cutiepii_Robot import EVENT_LOGS, LOGGER, dispatcher
-    from Cutiepii_Robot.modules.helper_funcs.chat_status import user_admin
-    from Cutiepii_Robot.modules.sql import log_channel_sql as sql
+    from AnieRobot import EVENT_LOGS, LOGGER, dispatcher
+    from AnieRobot.modules.helper_funcs.chat_status import user_admin
+    from AnieRobot.modules.sql import log_channel_sql as sql
 
     def loggable(func):
         @wraps(func)
