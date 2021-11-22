@@ -120,4 +120,4 @@ async def delete_msg(event):
     to_delete = event.message
     chat = await event.get_input_chat()
     rm = [msg, to_delete]
-    await event.client.delete_messages(chat, rm))
+    await event.client.delete_messages(chat, rm)
