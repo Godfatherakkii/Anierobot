@@ -131,17 +131,3 @@ messages all together or individually.
  × /del: Deletes the message you replied to
  × /purge: Deletes all messages between this and the replied to message.
 """
-
-__mod_name__ = "Purges"
-
-
-__help__ = """
-Need to delete lots of messages? That's what purges are for!
-
-Available commands are:
- - /purge: deletes all messages from the message you replied to, to the current message.
- - /spurge : deletes X messages silently
- - /del: deletes the message you replied to.
-"""
-
-__mod_name__ = "Purges"
