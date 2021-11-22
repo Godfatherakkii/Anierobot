@@ -12,6 +12,8 @@ import time
 from datetime import datetime
 from telethon import TelegramClient 
 
+StartTime = time.time()
+
 import telegram.ext as tg
 
 print("Aniebot")
