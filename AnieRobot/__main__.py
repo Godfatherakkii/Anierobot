@@ -23,15 +23,15 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-from marvel import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, client
+from AnieRobot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, client
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from marvel.modules import ALL_MODULES
-from marvel.modules.helper_funcs.chat_status import is_user_admin
-from marvel.modules.helper_funcs.misc import paginate_modules
-from marvel.modules.translations.strings import tld
-from marvel.modules.translations.strings import tld_help
-from marvel.modules.connection import connected
+from AnieRobot.modules import ALL_MODULES
+from AnieRobot.modules.helper_funcs.chat_status import is_user_admin
+from AnieRobot.modules.helper_funcs.misc import paginate_modules
+from AnieRobot.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld_help
+from AnieRobot.modules.connection import connected
 
 
 PM_START_TEXT = """Hey there! My name is {} - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
@@ -67,7 +67,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("marvel.modules." + module_name)
+    imported_module = importlib.import_module("AnieRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -171,9 +171,9 @@ def start(update, context):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup( 
-                [[InlineKeyboardButton(text="🎉 Add Me", url="t.me/YukoAraki_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/TheBotSupports")],
-                [InlineKeyboardButton(text="Repo", url="https://github.com/noobanon/missmarvel")]])
+                [[InlineKeyboardButton(text="🎉 Add Me", url="t.me/Anierobot_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
+                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/Aniebots")],
+                [InlineKeyboardButton(text="Repo", url="https://github.com/Anieteam/AnieRobot")]])
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(context.bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
