@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 Awesome-RJ
-Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+Copyright (C) 2021 D3NVIL 
+Copyright (c) 2021, DenvilArmy, <https://github.com/Anieteam/AnieRobot>
 
-This file is part of @Cutiepii_Robot (Telegram Bot)
+This file is part of @AnieRobot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,12 +34,12 @@ import time
 import re
 import sys
 import traceback
-import Cutiepii_Robot.modules.sql.users_sql as sql
+import AnieRobot.modules.sql.users_sql as sql
 
 
 from sys import argv
 from typing import Optional
-from Cutiepii_Robot import (
+from AnieRobot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -66,12 +66,12 @@ from Cutiepii_Robot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot.modules import ALL_MODULES
-from Cutiepii_Robot.modules.helper_funcs.chat_status import is_user_admin
-from Cutiepii_Robot.modules.helper_funcs.alternate import typing_action
-from Cutiepii_Robot.modules.helper_funcs.misc import paginate_modules
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.events import register
+from AnieRobot.modules import ALL_MODULES
+from AnieRobot.modules.helper_funcs.chat_status import is_user_admin
+from AnieRobot.modules.helper_funcs.alternate import typing_action
+from AnieRobot.modules.helper_funcs.misc import paginate_modules
+from AnieRobot.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -96,23 +96,23 @@ from telethon import Button, events
 
 @telethn.on(events.NewMessage(pattern="/alive"))
 async def awake(event):
-  CUTIEPII = event.sender.first_name
-  CUTIEPII = "**♡ I,m Cutiepii Robot 愛** \n\n"
-  CUTIEPII += "**♡ I'm Working With Awesome Speed**\n\n"
-  CUTIEPII += "**♡ Cutiepii: LATEST Version**\n\n"
-  CUTIEPII += "**♡ My Creator:** [Rajkumar](t.me/Awesome_RJ)\n\n"
-  CUTIEPII += "**♡ python-Telegram-Bot: 13.7**\n\n"
-  CUTIEPII_BUTTON = [
+  ANIE = event.sender.first_name
+  ANIE = "**♡ I,m Anie Robot 愛** \n\n"
+  ANIE += "**♡ I'm Working With Awesome Speed**\n\n"
+  ANIE += "**♡ Cutiepii: LATEST Version**\n\n"
+  ANIE += "**♡ My Creator:** [Rajkumar](t.me/Awesome_RJ)\n\n"
+  ANIE += "**♡ python-Telegram-Bot: 13.7**\n\n"
+  ANIE_BUTTON = [
       [
-          Button.url("🚑 Support", f"https://t.me/{SUPPORT_CHAT}"),
-          Button.url("📢 Updates", "https://t.me/Black_Knights_Union")
+          Button.url("🚑 Support", "https://t.me/Aniebotsupports"),
+          Button.url("📢 Updates", "https://t.me/Aniebots")
       ]
   ]
   await telethn.send_file(
       event.chat_id,
-      CUTIEPII_PHOTO,
-      caption = CUTIEPII,
-      buttons = CUTIEPII_BUTTON,
+      ANIE_PHOTO,
+      caption = ANIE,
+      buttons = ANIE_BUTTON,
   )
 
     
