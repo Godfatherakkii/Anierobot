@@ -1,11 +1,11 @@
-from marvel.modules.sql.translation import prev_locale
-from marvel.modules.translations.English import EnglishStrings
-from marvel.modules.translations.Russian import RussianStrings
-from marvel.modules.translations.Ukraine import UkrainianStrings
-from marvel.modules.translations.Spanish import SpanishStrings
-from marvel.modules.translations.Turkish import TurkishStrings
-from marvel.modules.translations.Indonesian import IndonesianStrings
-from marvel.modules.translations.Italian import ItalianStrings
+from AnieRobot.modules.sql.translation import prev_locale
+from AnieRobot.modules.translations.English import EnglishStrings
+from AnieRobot.modules.translations.Russian import RussianStrings
+from AnieRobot.modules.translations.Ukraine import UkrainianStrings
+from AnieRobot.modules.translations.Spanish import SpanishStrings
+from AnieRobot.modules.translations.Turkish import TurkishStrings
+from AnieRobot.modules.translations.Indonesian import IndonesianStrings
+from AnieRobot.modules.translations.Italian import ItalianStrings
 
 def tld(chat_id, t, show_none=True):
     LANGUAGE = prev_locale(chat_id)
