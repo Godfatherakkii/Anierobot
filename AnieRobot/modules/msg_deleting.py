@@ -5,7 +5,7 @@
 #software and other kinds of works.
 #PTB13 Updated by @noobanon // @FakeMasked
 
-from marvel import client, SUDO_USERS
+from AnieRobot import client, SUDO_USERS
 
 import asyncio
 from telethon import events
