@@ -87,7 +87,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="📜 Aʙᴏᴜᴛ", callback_data="innexia_"),
+        InlineKeyboardButton(text="📜 Aʙᴏᴜᴛ", callback_data="anie_"),
         InlineKeyboardButton(
             text="Bᴀꜱɪᴄ Hᴇʟᴘ 👮", callback_data="innexia_basichelp"
         ),
@@ -547,7 +547,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ 📢 ",
-                            url="https://t.me/Aniebotsupports"),
+                            url="https://t.me/{}".format(SUPPORT_CHAT),
                         )
                     ],
                 ]
