@@ -268,7 +268,6 @@ def setchat_title(update: Update, context: CallbackContext):
         return
         
         
-@connection_status
 @bot_admin
 @can_promote
 @user_admin
@@ -349,7 +348,6 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     return log_message
 
-@connection_status
 @bot_admin
 @can_promote
 @user_admin
@@ -425,7 +423,6 @@ def midpromote(update: Update, context: CallbackContext) -> str:
 
     return log_message
 
-@connection_status
 @bot_admin
 @can_promote
 @user_admin
@@ -501,7 +498,6 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-@connection_status
 @bot_admin
 @can_promote
 @user_admin
@@ -667,7 +663,6 @@ async def lowdemote(dmod):
         return
 
     
-@connection_status
 @bot_admin
 @can_promote
 @user_admin
@@ -749,7 +744,6 @@ def refresh_admin(update, _):
     update.effective_message.reply_text("Admins cache refreshed!")
 
 
-@connection_status
 @bot_admin
 @can_promote
 @user_admin
@@ -922,7 +916,6 @@ def pinned(update: Update, context: CallbackContext) -> str:
 
 @bot_admin
 @user_admin
-@connection_status
 def invite(update: Update, context: CallbackContext):
     bot = context.bot
     chat = update.effective_chat
@@ -944,7 +937,6 @@ def invite(update: Update, context: CallbackContext):
         )
 
 
-@connection_status
 def adminlist(update, context):
     chat = update.effective_chat  # type: Optional[Chat] -> unused variable
     user = update.effective_user  # type: Optional[User]
