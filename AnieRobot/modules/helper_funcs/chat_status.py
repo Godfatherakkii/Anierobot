@@ -6,6 +6,7 @@
 #PTB13 Updated by @noobanon
 
 from functools import wraps
+from cachetools import TTLCache
 from typing import Optional
 
 from telegram import User, Chat, ChatMember, Update, Bot
