@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 Awesome-RJ
-Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+Copyright (C) 2021 D3NVIL 
+Copyright (c) 2021, Anieteam, <https://github.com/Anieteam/AnieRobot>
 
-This file is part of @Cutiepii_Robot (Telegram Bot)
+This file is part of @Anierobot_bot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import re
 import os
 import html
 import requests
-import Cutiepii_Robot.modules.sql.chatbot_sql as sql
+import AnieRobot.modules.sql.chatbot_sql as sql
 
 from time import sleep
 from telegram import ParseMode
@@ -43,10 +43,10 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-from Cutiepii_Robot.modules.helper_funcs.filters import CustomFilters
-from Cutiepii_Robot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from Cutiepii_Robot import dispatcher, updater, SUPPORT_CHAT
-from Cutiepii_Robot.modules.log_channel import gloggable
+from AnieRobot.modules.helper_funcs.filters import CustomFilters
+from AnieRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from AnieRobot import dispatcher, updater, SUPPORT_CHAT
+from AnieRobot.modules.log_channel import gloggable
 
  
 @user_admin_no_reply
@@ -68,7 +68,7 @@ def kukirm(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Cutiepii Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
+                "Anie Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -93,7 +93,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Cutiepii Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
+                "Anie Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
