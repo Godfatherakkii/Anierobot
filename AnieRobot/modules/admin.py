@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 Awesome-RJ
-Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+Copyright (C) 2021 Noobanon 
+Copyright (c) 2021, Denvil, <https://github.com/Anieteam/AnieRobot>
 
-This file is part of @Cutiepii_Robot (Telegram Bot)
+This file is part of @Anierobot_bot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -40,9 +40,9 @@ from telethon.errors import *
 from telethon.tl import *
 from telethon import *
 
-from Cutiepii_Robot import DRAGONS, dispatcher, telethn as bot
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from AnieRobot import DRAGONS, dispatcher, telethn as bot
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_pin,
     can_promote,
@@ -55,12 +55,12 @@ from Cutiepii_Robot.modules.helper_funcs.chat_status import (
     can_manage_voice_chats,
 )
 
-from Cutiepii_Robot.modules.helper_funcs.extraction import (
+from AnieRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.helper_funcs.alternate import send_message
+from AnieRobot.modules.log_channel import loggable
+from AnieRobot.modules.helper_funcs.alternate import send_message
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
