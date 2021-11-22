@@ -15,7 +15,7 @@ from telegram import Message, Chat, Update, Bot
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 
-import marvel.modules.sql.notes_sql as sql
+import AnieRobot.modules.sql.notes_sql as sql
 from AnieRobot import dispatcher, LOGGER, OWNER_ID, SUDO_USERS, MESSAGE_DUMP
 from AnieRobot.__main__ import DATA_IMPORT
 from AnieRobot.modules.helper_funcs.chat_status import user_admin
