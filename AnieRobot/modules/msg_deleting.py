@@ -5,7 +5,7 @@
 #software and other kinds of works.
 #PTB13 Updated by @noobanon // @FakeMasked
 
-from AnieRobot import client, SUDO_USERS
+from AnieRobot import telethn, SUDO_USERS
 
 import asyncio
 from telethon import events
@@ -24,7 +24,7 @@ async def is_administrator(user_id: int, message):
     return admin
 
 
-@client.on(events.NewMessage(pattern="^/purge"))
+@telethn.on(events.NewMessage(pattern="^/purge"))
 async def purge(event):
     chat = event.chat_id
     msgs = []
@@ -63,7 +63,7 @@ async def purge(event):
         del_res = await event.respond(text, parse_mode="md")
         
 
-@client.on(events.NewMessage(pattern="^/spurge"))
+@telethn.on(events.NewMessage(pattern="^/spurge"))
 async def purge(event):
     chat = event.chat_id
     msgs = []
@@ -105,7 +105,7 @@ async def purge(event):
         await asyncio.sleep(2)
         await del_res.delete()
 
-@client.on(events.NewMessage(pattern="^/del$"))
+@telethn.on(events.NewMessage(pattern="^/del$"))
 async def delete_msg(event):
 
     if not await is_administrator(user_id=event.from_id, message=event):
