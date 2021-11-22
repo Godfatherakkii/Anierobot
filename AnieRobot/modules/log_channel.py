@@ -20,9 +20,9 @@ if is_module_loaded(FILENAME):
     from telegram.ext import CommandHandler, run_async
     from telegram.utils.helpers import escape_markdown
 
-    from marvel import dispatcher, LOGGER
-    from marvel.modules.helper_funcs.chat_status import user_admin
-    from marvel.modules.sql import log_channel_sql as sql
+    from AnieRobot import dispatcher, LOGGER
+    from AnieRobot.modules.helper_funcs.chat_status import user_admin
+    from AnieRobot.modules.sql import log_channel_sql as sql
 
 
     def loggable(func):
