@@ -24,7 +24,7 @@
 
 <h2 align="center";>OWNER</h2>
 
-<p align='center'>   <a href="https://t.me/D3NVIL"> <img src="https://img.shields.io/badge/Owner-d3nvil-red?style=for-the-badge&logo=telegram" /></a> </p>
+<p align='center'>   <a href="https://t.me/Godfatherakki"> <img src="https://img.shields.io/badge/Owner-d3nvil-red?style=for-the-badge&logo=telegram" /></a> </p>
 
 <h2 align="center";> Manual Deploy Tutorial</h2>
 
@@ -58,7 +58,7 @@ KEY = PORT | VALUE = 8443
 ```
 Pual Larson [ Maria Creator ]
 Ayra Hikari [Fed V2 + Best Source Updater ]
-DENVIL [ Anie Mentioner @D3NVIL]
+DENVIL [ Anie Mentioner @Godfatherakki]
 AND MANY MORES
 ```
 
