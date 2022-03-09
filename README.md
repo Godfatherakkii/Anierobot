@@ -81,7 +81,7 @@ I'll also help when a database schema changes, and some table column needs to be
 Join the [news channel](https://t.me/Aniebots) if you just want to stay in the loop about new features or
 announcements.
 
-Alternatively, [find me on telegram](https://t.me/D3NVIL)! (Keep all support questions in the support chat, where more people can help you.)
+Alternatively, [find me on telegram](https://t.me/Godfatherakki)! (Keep all support questions in the support chat, where more people can help you.)
 
 ## Starting the bot.
 
