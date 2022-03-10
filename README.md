@@ -24,7 +24,7 @@
 
 <h2 align="center";>OWNER</h2>
 
-<p align='center'>   <a href="https://t.me/Godfatherakki"> <img src="https://img.shields.io/badge/Owner-d3nvil-red?style=for-the-badge&logo=telegram" /></a> </p>
+<p align='center'>   <a href="https://t.me/Godfatherakki"> <img src="https://img.shields.io/badge/Owner-Akki-red?style=for-the-badge&logo=telegram" /></a> </p>
 
 <h2 align="center";> Manual Deploy Tutorial</h2>
 
