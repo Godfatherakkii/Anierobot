@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 ANIE_IMG = "https://telegra.ph/file/7944090b9aca51ef8f562.jpg"
 
 PM_START_TEXT = """
-`Heya` 🤗 `I am` **Anie** `your group super bot`
+`Salam` 🤗 `Mənn` **Ledy** `Qrup idarə botu`
 `I am very fast and  more efficient  I provide awesome  features which a owner will look for  filter ,warn system,note keeping system flood!`
 """
 
@@ -82,9 +82,9 @@ buttons = [
             text="❔Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="🔥 Sᴏᴜʀᴄᴇ",url="https://github.com/Anieteam/AnieRobot"),
+        InlineKeyboardButton(text="🛠️ Support",url="https://t.me/SOQrup"),
         InlineKeyboardButton(
-            text="Anie Userbot 🎶", url="https://github.com/Anieteam/Aniebots"
+            text="📣kanal 🎶", url="https://t.me/ledyplaylist"
         ),
     ],
     [
@@ -94,13 +94,13 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="💕 Add me💕", url="http://t.me/Anierobot_bot?startgroup=true"),
+        InlineKeyboardButton(text="💕 Məni Qrupa əlavə et💕", url="http://t.me/LedyRobot?startgroup=true"),
     ],
 ]
 
 
 HELP_STRINGS = """
-**SETTINGS**
+**PARAMETRLƏR**
 `Click on the buttons below to get documentation about specific modules..`)"""
 
 
