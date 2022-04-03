@@ -101,12 +101,12 @@ buttons = [
 
 HELP_STRINGS = """
 **PARAMETRLƏR**
-`Click on the buttons below to get documentation about specific modules..`)"""
+`Xüsusi modullar haqqında sənədləri əldə etmək üçün aşağıdakı düymələrə klikləyin..`)"""
 
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- @AnieBots's 💕"""
+DONATE_STRING = """Salam, iane verməyinizi eşitməyə şadam!
+ @ledyplaylist's 💕"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -221,7 +221,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Aniebotchat", url="t.me/Aniebotsupports")]]
+                [[InlineKeyboardButton(text="Ledy suppport", url="t.me/SOQrup")]]
             ),
         )
         
@@ -353,7 +353,7 @@ def innexia_about_callback(update, context):
     query = update.callback_query
     if query.data == "anie_":
         query.message.edit_text(
-            text=""" Anie - A bot to manage your groups with additional features!
+            text=""" Ledy - A bot to manage your groups with additional features!
             \nHere's the basic help regarding use of Anie.
             
             \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
@@ -364,10 +364,10 @@ def innexia_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ", url="t.me/Aniebotsupports"
+                            text="Bᴜɢ'ꜱ", url="t.me/SOQrup"
                         ),
                         InlineKeyboardButton(
-                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/Aniebots/11"
+                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/SOQrup"
                         ),
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="innexia_back")],
@@ -385,10 +385,10 @@ def innexia_about_callback(update, context):
 
     elif query.data == "anie_basichelp":
         query.message.edit_text(
-            text=f"*Here's basic Help regarding* *How to use Me?*"
+            text = f"*Budur* Ledy ilə bağlı əsas Yardım* *Məndən necə istifadə etməli?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n• After adding promote me manually with full rights for faster experience.\n"
-            f"\n• Than send `/admincache@Anierobot_bot` in that chat to refresh admin list in My database.\n"
+            f"\n• Than send `/admincache@Ledyrobot` in that chat to refresh admin list in My database.\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -446,12 +446,12 @@ def innexia_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/Anielogs"),
+                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/ledyplaylist"),
                     InlineKeyboardButton(text="Fᴇᴅ", url="t.me/Aniebots"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/AniebotSupports"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/Aniebots"),
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SOQrup"),
+                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/ledyplaylist"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="anie_basichelp"),
@@ -463,13 +463,13 @@ def innexia_about_callback(update, context):
     elif query.data == "anie_credit":
         query.message.edit_text(
             text=f"<b> CREDIT FOR Anie DEV'S</b>\n"
-            f"\nHere Some Developers Helping in Making The Aniw Bot",
+            f"\nHere Some Developers Helping in Making The Ledy Bot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="D3nvil", url="t.me/d3nvil"),
-                    InlineKeyboardButton(text="Anon", url="t.me/noobanon"),
+                    InlineKeyboardButton(text="MrAga", url="t.me/Tenha055"),
+                    InlineKeyboardButton(text="Bilim", url="t.me/ruzgar_alican"),
                  ],
                  [
                     InlineKeyboardButton(text="loly", url="t.me/piroXpower"),
@@ -489,8 +489,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..😻 I'm *Anie*
-                 \nHere is the [🔥Source Code🔥](https://github.com/Anieteam/AnieRobot) .""",
+            text=""" Salam..😻 Mən *Ledy*
+                 \nHere is the [🔥Source Code🔥](https://t.me/Tenha055) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -548,7 +548,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ 📢 ",
-                            url="https://t.me/t.me/Aniebotsupports"
+                            url="https://t.me/t.me/SOQrup"
                         )
                     ],
                 ]
