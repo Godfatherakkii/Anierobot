@@ -89,4 +89,8 @@ Once you've setup your database and your configuration (see below) is complete, 
 
 `python3 -m AnieRobot ` #This will auto run on heroku
 
+## Okteto Deployment
+
+<p align="center">
+<a href="https://cloud.okteto.com/deploy?repository=https://github.com/Godfatherakkii/Anierobot"><img src="https://img.shields.io/badge/Deploy%20To%20Okteto-informational?style=for-the-badge&logo=Okteto" width="200""/></p></a>
 
